@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Last of Us | Official Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+        
+        body {
+            font-family: 'Special Elite', cursive;
+            background-color: #111111;
+            color: #d4d4d4;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1d546ff6-fe3f-4a17-92fa-57e1a58c99c5.png') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            position: relative;
+        }
+        
+        .infected-text {
+            color: #ff2e2e;
+        }
+        
+        .character-card {
+            display: flex;
+            flex-direction: column;
+        }
+        .character-card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background-color: #ff2e2e;
+        }
+        
+        .mobile-menu {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.open {
+            transform: translateY(0);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        .gallery-image {
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-image:hover {
+            transform: scale(1.03);
+        }
+        
+        
+        .active-nav {
+            color: #ff2e2e;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+   
+    <nav class="bg-black py-4 px-6 fixed w-full z-50">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c10d0acc-05bc-4c4a-8da5-efc2238cea67.png" alt="The Last of Us logo with weathered text on cracked background" class="h-10">
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-white hover:text-red-500 transition">Home</a>
+                <a href="#story" class="nav-link text-white hover:text-red-500 transition">Story</a>
+                <a href="#characters" class="nav-link text-white hover:text-red-500 transition">Characters</a>
+                <a href="#timeline" class="nav-link text-white hover:text-red-500 transition">Timeline</a>
+                <a href="#gallery" class="nav-link text-white hover:text-red-500 transition">Gallery</a>
+                <a href="#about" class="nav-link text-white hover:text-red-500 transition">About</a>
+            </div>
+            
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="mobile-menu md:hidden absolute top-16 left-0 w-full bg-black p-4 space-y-4">
+            <a href="#home" class="mobile-nav-link block text-white hover:text-red-500 transition">Home</a>
+            <a href="#story" class="mobile-nav-link block text-white hover:text-red-500 transition">Story</a>
+            <a href="#characters" class="mobile-nav-link block text-white hover:text-red-500 transition">Characters</a>
+            <a href="#timeline" class="mobile-nav-link block text-white hover:text-red-500 transition">Timeline</a>
+            <a href="#gallery" class="mobile-nav-link block text-white hover:text-red-500 transition">Gallery</a>
+            <a href="#about" class="mobile-nav-link block text-white hover:text-red-500 transition">About</a>
+        </div>
+    </nav>
+
+    
+    <section id="home" class="hero-section flex items-center justify-center text-center">
+        <div class="px-4">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 text-white fade-in" style="animation-delay: 0.5s;">THE LAST OF US</h1>
+            <p class="text-xl md:text-2xl mb-8 text-white fade-in" style="animation-delay: 1s;">Survive. Together.</p>
+            <button id="trailer-btn" class="bg-transparent border-2 border-white text-white px-8 py-3 hover:bg-white hover:text-black transition fade-in" style="animation-delay: 1.5s;" onclick="window.location.href='https://youtu.be/uLtkt8BonwM'">WATCH TRAILER</button>
+        </div>
+    </section>
+
+   
+    <section id="story" class="py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center infected-text">THE STORY</h2>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <p class="mb-6 text-lg">In a world devastated by a fungal pandemic that turns humans into violent creatures, hardened survivor Joel is hired to smuggle 14-year-old Ellie out of a quarantine zone.</p>
+                <p class="mb-6 text-lg">What starts as a straightforward job soon transforms into a brutal journey across the post-apocalyptic United States, where they must rely on each other for survival.</p>
+                <p class="text-lg">Their journey forever bonds them as they fight off both infected and desperate survivors in a world gone mad.</p>
+            </div>
+            <div>
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2116afb1-baae-4f46-85cd-39b74a590678.png" alt="Joel and Ellie standing back-to-back in a ruined city, preparing for battle" class="rounded-lg shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+   
+    <section id="characters" class="py-20 px-6 bg-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center infected-text">CHARACTERS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+               
+                <div class="character-card bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/47dfe8c4-8e23-4f56-b484-b85abfbc7d5d.png" alt="Joel Miller - grizzled survivor with intense expression wearing a flannel shirt" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Joel Miller</h3>
+                        <p class="text-gray-300">A hardened survivor who lost everything in the outbreak. His world is forever changed when he meets Ellie.</p>
+                    </div>
+                </div>
+                
+                
+                <div class="character-card bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d7cea545-d1e7-4370-a817-98fc9e7dab26.png" alt="Ellie Williams - young determined girl with short brown hair and a switchblade" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Ellie Williams</h3>
+                        <p class="text-gray-300">A brave teenager with a unique immunity to the infection. Her resilience and wit make her an unlikely companion for Joel.</p>
+                    </div>
+                </div>
+                
+               
+                <div class="character-card bg-gray-800 rounded-lg overflow-hidden shadow-lg h-full">
+                    <img src="joe.jpg" alt="Tommy Miller - younger brother of Joel with shorter hair and a scar" class="w-full h-64 object-cover">
+                    <div class="p-6 flex flex-col h-full">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Tommy Miller</h3>
+                        <p class="text-gray-300 flex-grow">Joel's younger brother and former soldier. He represents hope in a hopeless world after finding purpose in the Jackson community.</p>
+                    </div>
+                    
+                </div>
+                
+               
+                <div class="character-card bg-gray-800 rounded-lg overflow-hidden shadow-lg h-full">
+                    <img src="ma.jpg" alt="Marlene - leader of the Fireflies with short hair and commanding presence" class="w-full h-64 object-cover">
+                    <div class="p-6 flex flex-col h-full">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Marlene</h3>
+                        <p class="text-gray-300 flex-grow">The determined leader of the Fireflies resistance group who knew Ellie's mother. She tasks Joel with transporting Ellie, believing her immunity could lead to a cure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="timeline" class="py-20 px-6 max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center infected-text">TIMELINE</h2>
+        <div class="space-y-8 relative">
+            
+            <div class="timeline-item pl-8 relative">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-2 text-white">The Outbreak - 2013</h3>
+                    <p class="text-gray-300">Cordyceps fungus mutates and spreads rapidly, causing worldwide chaos and collapse of civilization.</p>
+                </div>
+            </div>
+            
+            
+            <div class="timeline-item pl-8 relative">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-2 text-white">Boston QZ - 2033</h3>
+                    <p class="text-gray-300">Joel works as a smuggler in the Boston quarantine zone. He's tasked with escorting Ellie outside the QZ.</p>
+                </div>
+            </div>
+            
+           
+            <div class="timeline-item pl-8 relative">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-2 text-white">The Journey Begins</h3>
+                    <p class="text-gray-300">Ellie reveals her immunity to Joel. They begin their cross-country journey to find the Fireflies.</p>
+                </div>
+            </div>
+            
+            
+            <div class="timeline-item pl-8 relative">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-2 text-white">Finding the Fireflies</h3>
+                    <p class="text-gray-300">After surviving countless dangers, Joel and Ellie finally reach the Fireflies in Salt Lake City.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="gallery" class="py-20 px-6 bg-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center infected-text">GALLERY</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="gallery-image overflow-hidden rounded-lg">
+                    <img src="a.jpg" alt="Joel and Ellie walking through an overgrown city with collapsed buildings" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-image overflow-hidden rounded-lg">
+                    <img src="b.jpg" alt="Ellie standing in a museum looking up at a dinosaur skeleton with wonder" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-image overflow-hidden rounded-lg">
+                    <img src="c.jpg" alt="Joel fighting off infected in a dark, cramped space with his flashlight" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-image overflow-hidden rounded-lg">
+                    <img src="d.jpg" alt="Ellie playing guitar in a peaceful moment with warm lighting" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-image overflow-hidden rounded-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1d546ff6-fe3f-4a17-92fa-57e1a58c99c5.png" alt="Joel and Ellie looking out over a ruined cityscape at sunset" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-image overflow-hidden rounded-lg">
+                    <img src="e.jpg" alt="Ellie using her knife to defend against a Clicker in a dark corridor" class="w-full h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    <section id="about" class="py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center infected-text">ABOUT THE SERIES</h2>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <p class="mb-6 text-lg">The Last of Us is a critically acclaimed action-adventure game developed by Naughty Dog and published by Sony Computer Entertainment.</p>
+                <p class="mb-6 text-lg">First released in 2013 for PlayStation 3, it was remastered for PlayStation 4 in 2014. A television adaptation premiered on HBO in 2023, starring Pedro Pascal as Joel and Bella Ramsey as Ellie.</p>
+                <p class="text-lg">The story explores themes of love, loss, survival, and what it means to be human in a world stripped of humanity.</p>
+            </div>
+            <div>
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/037271dd-36e5-4c7a-8d0a-9ce7aaa52ae4.png" alt="Official Last of Us game cover art showing Joel and Ellie walking in a forest" class="rounded-lg shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+   
+    <footer class="bg-black py-12 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            
+            
+            <div class="mb-8">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c10d0acc-05bc-4c4a-8da5-efc2238cea67.png" alt="The Last of Us logo" class="h-10 mx-auto">
+            </div>
+            
+            <p class="text-gray-500 text-sm">© 2023 The Last of Us. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+       
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+        
+       
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        });
+        
+       
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+        const sections = document.querySelectorAll('section[id]');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 300)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active-nav');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active-nav');
+                }
+            });
+            
+            mobileLinks.forEach(link => {
+                link.classList.remove('active-nav');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active-nav');
+                }
+            });
+        });
+        
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+       
+    </script>
+</body>
+</html>
